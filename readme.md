@@ -32,7 +32,7 @@ git clone https://github.com/diogosilvasantana/fullcycle-docker-desafio-nginx-no
 4. Execute o seguinte comando para iniciar os serviços:
 
 ```bash
-docker-compose up -d --build
+docker-compose up -d
 ```
 
 Isso construirá as imagens e iniciará os contêineres necessários.
