@@ -2,6 +2,8 @@
 
 Esta é uma aplicação simples que demonstra o uso do Nginx como um servidor proxy reverso para uma aplicação Node.js. Ela consiste em dois serviços principais: o serviço Node.js que serve uma página HTML simples e o serviço Nginx que atua como um proxy reverso, direcionando as solicitações para o serviço Node.js.
 
+A aplicação também conta com um banco de dados mysql. Ele é gerado assim que rodar o comando do docker-compose.
+
 ## Funcionamento
 
 - O serviço Node.js serve uma página HTML simples com a mensagem "Full Cycle Rocks!".
@@ -76,6 +78,26 @@ docker logs nginx
 # Logs do container do banco de dados:
 docker logs db
 ```
+## Banco de dados
+
+A aplicação executa um banco de dados mysql simples. O arquivo index.js da pasta node cria uma tabela e insere um nome.
+
+Para acessar, siga os comandos abaixo:
+
+```bash
+# Acessar o container do banco de dados:
+docker exec -it db bash
+
+# Acessar o mysql dentro do container:
+mysql -uroot -proot;
+
+# Selecionar o banco de dados nodedb
+use nodedb;
+
+# Fazer o select na tabela "people":
+SELECT * FROM people;
+```
+
 ## Desenvolvido por:
 
 Diogo da Silva Santana - Engenheiro de Software Senior no Itaú Unibanco
